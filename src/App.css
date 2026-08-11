@@ -1,0 +1,88 @@
+@import url('https://fonts.googleapis.com/css2?family=Mali:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
+
+/* Reset default browser styles and provide a consistent starting point */
+html {
+  box-sizing: border-box;
+  font-size: 16px;
+}
+  
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+  
+body, h1, h2, h3, h4, h5, h6, p, ol, ul {
+  margin: 0;
+  padding: 0;
+  font-weight: 500;
+  color: #5d341f;
+}
+
+body {
+  font-family: "Mali", cursive;
+  background-color: #fee9bc;
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 124px;
+}
+
+footer, #navbar, #sidebar {
+  padding: 12px;
+  background-color: #ffce7a;
+}
+
+#navbar {
+  display: flex;
+  justify-content: space-between;
+}
+
+#navbar img {
+  height: 100px;
+}
+
+html, body, #root {
+  height: 100%;
+}
+
+#main-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
+#sidebar ul {
+  list-style: none;
+}
+
+#sidebar {
+  width: 180px;
+  height: 100%;
+  background-color: #FCE3A9;
+  box-shadow: 2px 2px 8px #5d341f;
+  z-index: -1;
+}
+
+#sidebar a {
+  text-decoration: none;
+  color: #5d341f;
+  font-size: 24px;
+}
+
+#sidebar ul {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+#sidebar > ul > li {
+  background-color: #5d341f33;
+  padding: 8px 8px 8px 12px;
+  box-shadow: 2px 2px 2px #00000055;
+  border-radius: 6px;
+  border: 1px solid #5d341f99;
+}
