@@ -1,11 +1,7 @@
 import RecipeCard from './RecipeCard'
-import allRecipes from "../assets/data/recipes.json"
-import { useState } from 'react'
 
-const RecipesList = () => {
 
-    let [recipes, setRecipes] = useState(allRecipes)
-
+const RecipesList = ({recipes, setRecipes}) => {
     const handleDeleteRecipe = (id) => {
         console.log("clicked")
         setRecipes(recipes.filter((recipe) => {
@@ -13,10 +9,9 @@ const RecipesList = () => {
         }))
     }
 
-
     return (
         <div className="recipes-list">
-            {recipes.map((recipe) => {
+            {recipes?.map((recipe) => {
               return  <RecipeCard key={recipe.id} recipe={recipe} handleDeleteRecipe={handleDeleteRecipe}/>
             })
             }

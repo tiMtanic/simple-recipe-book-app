@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 const RecipeCard = ({ recipe, handleDeleteRecipe }) => {
   
     const getImage = () => {
@@ -12,11 +14,13 @@ const RecipeCard = ({ recipe, handleDeleteRecipe }) => {
             </div> 
             <img src={getImage()}/>
         </div>
-      <h2> {recipe.name} </h2>
-      <div className="recipe-card-details">
-        <p> Calories: {recipe.calories} </p>
-        <p> Servings: {recipe.servings} </p>
-      </div>
+      <Link to={`/recipe/${recipe.id}`}>
+        <h2> {recipe.name} </h2>
+        <div className="recipe-card-details">
+          <p> Calories: {recipe.calories} </p>
+          <p> Servings: {recipe.servings} </p>
+        </div>
+      </Link>
     </div>
   );
 };

@@ -57,13 +57,11 @@ footer, #navbar, #sidebar {
 #sidebar {
   width: 180px;
   background-color: #FCE3A9;
-  box-shadow: 2px 2px 8px #5d341f;
-  z-index: -1;
+  border-right: 1px solid #5d341f55;
 }
 
 #sidebar a {
   text-decoration: none;
-  color: #5d341f;
   font-size: 24px;
 }
 
@@ -84,8 +82,8 @@ footer, #navbar, #sidebar {
 
 .container {
   display: flex;
+  flex: 1;
   gap: 20px;
-  height: 100%;
 }
 
 .recipe-card {
@@ -152,4 +150,39 @@ footer, #navbar, #sidebar {
 
 .delete-button {
   cursor: pointer;
+}
+
+#main-content-container {
+  flex: 1 1;
+}
+
+html,body {
+  height: 100%;
+}
+
+#root {
+  height: 100%;
+}
+
+a, a:active, a:visited {
+  text-decoration: none;
+}
+
+.active-link {
+  color: #FF0000;
+}
+
+.inactive-link {
+  color: #5d341f;
+}
+
+#team-members-container {
+  display: flex;
+  justify-content: space-evenly;
+  gap: 16px;
+}
+
+#team-members-container > div {
+  width: 50%;
+  background-color: #fef2d7;
 }
