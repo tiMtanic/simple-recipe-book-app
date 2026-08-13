@@ -19,7 +19,7 @@ body, h1, h2, h3, h4, h5, h6, p, ol, ul {
 
 body {
   font-family: "Mali", cursive;
-  background-color: #fee9bc;
+  background-color: #FFFDF9;
 }
 
 footer {
@@ -43,10 +43,6 @@ footer, #navbar, #sidebar {
   height: 100px;
 }
 
-html, body, #root {
-  height: 100%;
-}
-
 #main-container {
   display: flex;
   flex-direction: column;
@@ -60,7 +56,6 @@ html, body, #root {
 
 #sidebar {
   width: 180px;
-  height: 100%;
   background-color: #FCE3A9;
   box-shadow: 2px 2px 8px #5d341f;
   z-index: -1;
@@ -85,4 +80,76 @@ html, body, #root {
   box-shadow: 2px 2px 2px #00000055;
   border-radius: 6px;
   border: 1px solid #5d341f99;
+}
+
+.container {
+  display: flex;
+  gap: 20px;
+  height: 100%;
+}
+
+.recipe-card {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  border: 1px solid #5d341f55;
+  border-radius: 12px;
+  align-items: center;
+  overflow: hidden;
+  height: 300px;
+  justify-content: space-between;
+  box-shadow: 2px 2px 2px #00000055;
+  transition: transform 200ms ease, opacity 200ms ease;
+}
+
+.recipe-card:hover {
+  transform:translateY(-10px);
+  opacity: 0.95;
+}
+
+.recipe-card-image {
+  width: 100%;
+  height: 200px;
+  background-color: #ffce7a;
+  padding: 14px;
+  border-bottom: 1px solid #5d341f55;
+  display: flex;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+}
+
+.recipe-card-image svg {
+  position: absolute;
+  right: 10px;
+  top: 12px;
+  transition: transform 200ms ease, opacity 200ms ease;
+}
+
+.recipe-card-image svg:hover {
+  transform: scale(1.08);
+  opacity: 0.95;
+}
+
+.recipe-card-image img {
+  height: 100%;
+}
+
+.recipe-card-details {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 10px;
+}
+
+.recipes-list {
+  display: flex;
+  margin: 40px 0px;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.delete-button {
+  cursor: pointer;
 }
