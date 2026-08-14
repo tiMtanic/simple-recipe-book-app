@@ -117,7 +117,9 @@ footer, #navbar, #sidebar {
   justify-content: center;
 }
 
-.recipe-card-image svg {
+.recipe-card-image .card-actions {
+  display: flex;
+  gap: 10px;
   position: absolute;
   right: 10px;
   top: 12px;
@@ -148,7 +150,7 @@ footer, #navbar, #sidebar {
   gap: 20px;
 }
 
-.delete-button {
+.delete-button , .edit-button {
   cursor: pointer;
 }
 
@@ -186,3 +188,4 @@ a, a:active, a:visited {
   width: 50%;
   background-color: #fef2d7;
 }
+

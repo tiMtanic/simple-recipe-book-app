@@ -9,9 +9,16 @@ const RecipeCard = ({ recipe, handleDeleteRecipe }) => {
   return (
     <div className="recipe-card">
         <div className="recipe-card-image">
+          <div className="card-actions">
            <div className="delete-button" onClick={() => handleDeleteRecipe(recipe.id)}>
                 <i className="fa-solid fa-trash"></i>
             </div> 
+            <div className="edit-button" onClick={() => handleDeleteRecipe(recipe.id)}>
+               <Link to={`/recipe/${recipe.id}/edit`}>
+                <i className="fa-solid fa-pencil"></i>
+               </Link>
+            </div> 
+          </div>
             <img src={getImage()}/>
         </div>
       <Link to={`/recipe/${recipe.id}`}>

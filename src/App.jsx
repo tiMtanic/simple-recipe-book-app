@@ -9,6 +9,8 @@ import NotFoundPage from "./pages/NotFoundPage";
 
 import allRecipes from "./assets/data/recipes.json"
 import { useState } from "react";
+import AddRecipePage from "./pages/AddRecipePage";
+import EditRecipePage from "./pages/EditRecipePage";
 
 
 function App() {
@@ -24,6 +26,8 @@ function App() {
             <Route path="/" element={<RecipesListPage recipes={recipes} setRecipes={setRecipes} />} />
             <Route path="/recipe/:recipeId" element={<RecipeDetailsPage recipes={recipes} />} />
             <Route path="/about" element={<AboutPage />} />
+            <Route path="/recipes/create" element={<AddRecipePage setRecipes={setRecipes}/>} />
+            <Route path="/recipe/:recipeId/edit" element={<EditRecipePage recipes={recipes} setRecipes={setRecipes}/>} />
             <Route path="*" element={<NotFoundPage />} />
           </Routes>
         </div>
