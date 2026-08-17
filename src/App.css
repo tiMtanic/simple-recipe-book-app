@@ -17,7 +17,7 @@ body, h1, h2, h3, h4, h5, h6, p, ol, ul {
   color: #5d341f;
 }
 
-body {
+body, button, input {
   font-family: "Mali", cursive;
   background-color: #FFFDF9;
 }
@@ -73,17 +73,21 @@ footer, #navbar, #sidebar {
 }
 
 #sidebar > ul > li {
-  background-color: #5d341f33;
+  background-color: #FFFDF9;
   padding: 8px 8px 8px 12px;
   box-shadow: 2px 2px 2px #00000055;
   border-radius: 6px;
-  border: 1px solid #5d341f99;
+  border: 2px solid #5d341f;
+}
+
+#sidebar > ul > li:hover {
+  background-color:#FCE3A955;
+  cursor: pointer;
 }
 
 .container {
   display: flex;
   flex: 1;
-  gap: 20px;
 }
 
 .recipe-card {
@@ -156,6 +160,7 @@ footer, #navbar, #sidebar {
 
 #main-content-container {
   flex: 1 1;
+  margin: 20px;
 }
 
 html,body {
@@ -170,22 +175,185 @@ a, a:active, a:visited {
   text-decoration: none;
 }
 
+.edit-button svg{
+  color: #5d341f;
+}
+
 .active-link {
-  color: #FF0000;
+  color:#ffce7a;
 }
 
 .inactive-link {
   color: #5d341f;
-}
+} 
 
 #team-members-container {
   display: flex;
-  justify-content: space-evenly;
-  gap: 16px;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
 }
 
-#team-members-container > div {
+.team-member-content {
   width: 50%;
   background-color: #fef2d7;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 20px;
+  align-items: center;
+  margin-top: 20px;
+  border: 1px solid #5d341f99;
+  border-radius: 4px;
+  box-shadow: 2px 2px 2px #5d341f55;
 }
 
+.team-member-content > img {
+  height: 200px;
+}
+
+
+.recipe-page-header {
+  height: 350px;
+  margin: 20px;
+  background-color: #ffce7a;
+  border-radius: 5px;
+  box-shadow: 2px 2px 2px #00000055;
+  display: flex;
+  justify-content: space-between;
+}
+
+.recipe-header-content {
+  display: flex;
+  flex-direction: column;
+  margin: 20px;
+  justify-content: space-between;
+  flex: 0 0 60%
+}
+
+.recipe-page-header > img {
+  margin-right: 20px;
+}
+
+.recipe-header-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.recipe-header-text > h1 {
+  font-size: 52px;
+  text-transform: uppercase;
+}
+
+.add-recipe-button {
+  font-size: 14px;
+  padding: 10px;
+  border-radius: 20px;
+  border: 2px solid #5d341f ;
+  box-shadow: 2px 2px 2px  #00000055;
+  transition: transform 200ms ease, opacity 200ms ease;
+}
+
+.add-recipe-button:hover{
+  cursor: pointer;
+  background-color:#ffce7a;
+  color: #5d341f;
+  transform:scale(1.1)
+}
+
+.recipe-form {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.recipe-form-header {
+  height: 150px;
+  background-color: #ffce7a;
+  border-radius: 4px;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.recipe-form-header > img {
+  height: 150px;
+  width: 150px;
+}
+
+.recipe-form-container {
+  display: flex;
+  flex-direction: column;
+  background-color: #FCE3A955;
+  border-radius: 4px;
+  border: 1px solid #5d341f55;
+  box-shadow: 2px 2px 2px  #5d341f55;
+  align-items: center;
+  padding: 20px 10px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 60%;
+  padding: 20px;
+}
+
+input {
+  height: 32px;
+}
+
+#ingredients {
+  height: 100px;
+  text-wrap: wrap;
+}
+
+.recipe-form-button {
+  width: 250px;;
+  font-size: 14px;
+  padding: 10px;
+  border-radius: 20px;
+  border: 2px solid #5d341f ;
+  box-shadow: 2px 2px 2px  #00000055;
+  transition: transform 200ms ease, opacity 200ms ease;
+  align-self: center;
+}
+
+.recipe-form-button:hover{
+  cursor: pointer;
+  background-color:#ffce7a;
+  color: #5d341f;
+  transform:scale(1.1)
+}
+
+.not-found-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 20px;
+  margin-bottom: 40px;
+}
+
+.not-found-page > img {
+  height: 400px;
+  width: 400px;
+}
+
+.not-found-page-content > p {
+  width: 80%;
+}
+
+.not-found-page-content > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.not-found-page-content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+}

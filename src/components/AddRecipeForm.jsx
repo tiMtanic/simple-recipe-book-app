@@ -45,7 +45,7 @@ const AddRecipeForm = ({recipes, setRecipes}) => {
   }
 
     return (
-        <div className="container">
+        <div className="recipe-form-container">
             <form onSubmit={handleSubmit}>
                 <label htmlFor="name"> Name: </label>
                 <input type="text" id="name" name="name" value={newRecipe.name} value={newRecipe.name} onChange={handleInputChange}></input>
@@ -58,8 +58,8 @@ const AddRecipeForm = ({recipes, setRecipes}) => {
                 <label htmlFor="category"> Category: </label>
                 <input type="text" id="category" name="category" value={newRecipe.category} onChange={handleInputChange}></input>
                 <label htmlFor="ingredients"> Ingredients: </label>
-                <input type="text" id="ingredients" name="ingredients" value={newRecipe.ingredients} onChange={handleInputChange}></input>
-                <button type="submit">{existingRecipe ? "Update " : "Add "}Recipe</button>
+                <textarea rows={3} cols={50} type="text" id="ingredients" name="ingredients" value={newRecipe.ingredients} onChange={handleInputChange}></textarea>
+                <button className="recipe-form-button " type="submit">{existingRecipe ? "Update " : "Add "}Recipe</button>
             </form>
         </div>
     )
