@@ -4,7 +4,11 @@ import { useNavigate, useParams } from "react-router-dom"
 const AddRecipeForm = ({recipes, setRecipes}) => {
     const { recipeId } = useParams()
     const navigate = useNavigate()
-    const existingRecipe = recipes?.find((recipe) => recipe.id === recipeId)
+    
+    const existingRecipe = recipes?.find(
+    recipe => recipe.id === recipeId
+    )
+
     const [ newRecipe, setNewRecipe ] = useState( !existingRecipe ? {
         "id": crypto.randomUUID,
         "name": "",
@@ -16,27 +20,28 @@ const AddRecipeForm = ({recipes, setRecipes}) => {
         "ingredients": []
     } : existingRecipe )
 
-    console.log(!existingRecipe ? {
-        "id": crypto.randomUUID,
-        "name": "",
-        "calories": 0,
-        "image": "",
-        "servings": 1 ,
-        "category": "",
-        "isLowCalorie": false,
-        "ingredients": []
-    } : existingRecipe)
-
-    console.log(recipes)
-
   const handleInputChange = (e) => {
     setNewRecipe({...newRecipe,[e.target.name]: e.target.value })
   }
   
   const handleSubmit =(e) => {
     e.preventDefault()
-    setRecipes((recipes) => [...recipes, newRecipe])
-    navigate("/")
+
+    const recipeToAdd = {...newRecipe, ingredients: newRecipe.ingredients.split(",")};
+
+    if (existingRecipe) {
+        // update
+        const updatedRecipes = recipes.map((element) => {
+            return element.id === recipeId ? recipeToAdd : element;
+        });
+        
+        setRecipes(updatedRecipes);
+    } else {
+        // add
+        setRecipes((recipes) => [...recipes, recipeToAdd]);
+    }
+    
+    navigate("/");
   }
 
     return (
@@ -54,7 +59,7 @@ const AddRecipeForm = ({recipes, setRecipes}) => {
                 <input type="text" id="category" name="category" value={newRecipe.category} onChange={handleInputChange}></input>
                 <label htmlFor="ingredients"> Ingredients: </label>
                 <input type="text" id="ingredients" name="ingredients" value={newRecipe.ingredients} onChange={handleInputChange}></input>
-                <button type="submit"> Add Recipe </button>
+                <button type="submit">{existingRecipe ? "Update " : "Add "}Recipe</button>
             </form>
         </div>
     )

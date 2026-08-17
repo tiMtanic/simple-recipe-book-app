@@ -13,7 +13,7 @@ const RecipeCard = ({ recipe, handleDeleteRecipe }) => {
            <div className="delete-button" onClick={() => handleDeleteRecipe(recipe.id)}>
                 <i className="fa-solid fa-trash"></i>
             </div> 
-            <div className="edit-button" onClick={() => handleDeleteRecipe(recipe.id)}>
+            <div className="edit-button">
                <Link to={`/recipe/${recipe.id}/edit`}>
                 <i className="fa-solid fa-pencil"></i>
                </Link>
