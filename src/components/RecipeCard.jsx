@@ -5,6 +5,21 @@ import { useState } from "react";
 
 const RecipeCard = ({ recipe, handleDeleteRecipe }) => {
   const [deleteModalOpen, setDeleteModalOpen] = useState(false);
+  const colors = [
+    "#F7C6C7", // strawberry pink
+    "#F9D3A7", // peach
+    "#F6E39A", // butter yellow
+    "#C9E3B8", // fresh pastel green
+    "#BFDDF2", // sky blue
+    "#D7C2F0", // lavender
+    "#F3C1DA", // candy rose
+    "#BFE3D7", // mint
+    "#F4D0B5", // apricot
+    "#C8D2F0"  // periwinkle
+  ];
+    const [ recipeBgcolor ] = useState(() => {
+      return colors[Math.floor(Math.random() * colors.length)]
+    })
 
   const getImage = () => {
       return `src/assets/images/${recipe.image}`
@@ -13,7 +28,7 @@ const RecipeCard = ({ recipe, handleDeleteRecipe }) => {
   return (
     <>
       <div className="recipe-card">
-          <div className="recipe-card-image">
+          <div className="recipe-card-image" style={{backgroundColor: recipeBgcolor}}> 
             <div className="card-actions">
             <div className="delete-button" onClick={() => setDeleteModalOpen(true)}>
                   <i className="fa-solid fa-trash"></i>
