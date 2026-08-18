@@ -28,8 +28,8 @@ function AboutPage() {
            <div className="team-member-content">
             <div>
               <h3>Tim</h3>
-              <p>GitHub_Link</p>
-              <p>LinkedIn_Link</p>
+              <p><a href="https://github.com/tiMtanic">GitHub</a></p>
+              <p><a href="https://de.linkedin.com/in/tim-lehming">LinkedIn</a></p>
             </div>
             <img src="../src/assets/images/tim.png"/>
           </div>
