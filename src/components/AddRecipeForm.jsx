@@ -9,8 +9,13 @@ const AddRecipeForm = ({recipes, setRecipes}) => {
     recipe => recipe.id === recipeId
     )
 
+    const getRecipeId = () => {
+        const calculateId = recipes?.length +1
+        return `recipe-${calculateId}`
+    }
+
     const [ newRecipe, setNewRecipe ] = useState( !existingRecipe ? {
-        "id": crypto.randomUUID,
+        "id": getRecipeId(),
         "name": "",
         "calories": 0,
         "image": "",
